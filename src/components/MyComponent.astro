@@ -1,0 +1,21 @@
+---
+const data = await fetch(
+  "https://learn-nextjs-six-flame.vercel.app/api/data"
+).then((r) => r.json());
+
+interface ListNameAge {
+  id: number;
+  name: string;
+  age: number;
+}
+---
+
+<ul class="mt-5 list-disc">
+  {
+    data.data.map((da: ListNameAge) => (
+      <li>
+        {da.name} is {da.age} years old
+      </li>
+    ))
+  }
+</ul>
