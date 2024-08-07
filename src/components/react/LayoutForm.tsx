@@ -5,7 +5,7 @@ import StepConfirm from "./stepConfirm.tsx";
 import Header from "./Header.tsx";
 
 export default function LayoutForm() {
-  const [step, setStep] = useState("step1");
+  const [step, setStep] = useState<string>("step1");
 
   return (
     <>
