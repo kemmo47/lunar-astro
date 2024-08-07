@@ -3,33 +3,6 @@ type Step1Props = {
 };
 
 export default function Step1({ setStep }: Step1Props) {
-  const buy_items = [
-    {
-      title: "title",
-      amount: 1,
-      assessed_price: [1000, 2000],
-      not_buy: false,
-    },
-    {
-      title: "title2",
-      amount: 2,
-      assessed_price: [1000, 2000],
-      not_buy: true,
-    },
-    {
-      title: "title3",
-      amount: 3,
-      assessed_price: [3000, 4000],
-      not_buy: true,
-    },
-    {
-      title: "title4",
-      amount: 4,
-      assessed_price: [4000, 5000],
-      not_buy: false,
-    },
-  ];
-
   function tsToDeliveryDateLabel(ts: number) {
     const wNames = ["日", "月", "火", "水", "木", "金", "土"];
 
@@ -57,9 +30,9 @@ export default function Step1({ setStep }: Step1Props) {
           査定額合計
         </div>
         <div>
-          <span>40</span>
+          <span>{tsToDeliveryDateLabel(40)}</span>
           <span>～</span>
-          <span>60</span>
+          <span>{tsToDeliveryDateLabel(400)}</span>
         </div>
       </div>
       Step1
