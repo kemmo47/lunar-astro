@@ -1,0 +1,10 @@
+---
+import "../styles/global.css";
+
+import Layout from "../layouts/Layout.astro";
+import LayoutForm from "../components/react/LayoutForm";
+---
+
+<Layout title="Welcome to Astro.">
+  <LayoutForm client:visible />
+</Layout>
