@@ -81,7 +81,7 @@ export default function Header({ step }: HeaderProps) {
 
         <div
           className={`${
-            step == "stepConfirm"
+            step == "step3"
               ? "bg-[#0e7ac3] text-white after:border-l-[#0e7ac3]"
               : "bg-[#f1f1f1] text-black after:border-l-[#f1f1f1]"
           } flex flex-col relative py-3 pl-[60px] w-[200px]

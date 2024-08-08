@@ -1,3 +1,7 @@
+import ErrorMessage from "./ErrorMessage";
+import { Check } from "./icon/Check";
+import { Circle } from "./icon/Circle";
+
 type Step1Props = {
   setStep: (step: string) => void;
 };
@@ -59,13 +63,13 @@ export default function Step1({ setStep }: Step1Props) {
   }
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <>
       <div className="border-b border-b-red-700 flex items-center gap-7">
         <div className="bg-red-700 text-white text-xs px-2 py-1">
           査定額合計
         </div>
         <div className="text-red-700">
-          <span className="font-medium text-[35px]">40</span>
+          <span className="font-medium text-[40px]">40</span>
           <span className="text-[45px]">～</span>
           <span className="font-medium text-[50px]">400</span>
           <span className="font-medium text-[20px]">円</span>
@@ -79,24 +83,17 @@ export default function Step1({ setStep }: Step1Props) {
         <span className="text-12">※期限を過ぎると再び査定が必要です</span>
       </div>
 
-      <div className="mt-3">
-        <div className="grid grid-cols-3 gap-3">
-          <div className="col-span-1 flex flex-col gap-0.5">
-            <div className="border border-[#fff3d0] bg-[#fffaea] p-3 flex items-center justify-between">
-              <div>お届け日</div>
-              <div className="rounded bg-orange-500 text-white p-1 text-xs">
-                必須
-              </div>
-            </div>
-            <div className="border border-[#fff3d0] bg-[#fffaea] p-3 flex items-center justify-between">
-              <div>お届け時間</div>
-              <div className="rounded bg-orange-500 text-white p-1 text-xs">
-                必須
-              </div>
+      <div className="mt-5">
+        <div className="grid grid-cols-3 gap-1">
+          <div className="border border-[#fff3d0] bg-[#fffaea] p-3 flex flex-wrap items-center justify-between">
+            <div>お届け日</div>
+            <div className="rounded bg-orange-500 text-white p-1 text-xs">
+              必須
             </div>
           </div>
-          <div className="col-span-2 flex flex-col gap-2 justify-evenly">
-            <div className="flex items-center gap-2 relative">
+
+          <div className="col-span-2 ml-3 my-auto">
+            <div className="grid grid-cols-[20px_auto] items-center gap-2 mt-1.5">
               <div className="border border-[#53b300] bg-[#53b300] rounded-[50%] w-5 h-5 text-white flex items-center justify-center text-xs">
                 ✓
               </div>
@@ -104,7 +101,7 @@ export default function Step1({ setStep }: Step1Props) {
                 name="day"
                 id="day"
                 required
-                className="rounded border border-[#53b300] px-3 py-2 bg-[#eff7e8] w-1/2 shadow-[0_0_3px_#53b300] outline-none"
+                className="rounded border border-[#53b300] px-3 py-2 bg-[#eff7e8] w-full shadow-[0_0_3px_#53b300] outline-none"
               >
                 <option value="">選択してください</option>
                 {optionsDay.map((option) => (
@@ -117,29 +114,22 @@ export default function Step1({ setStep }: Step1Props) {
                   </option>
                 ))}
               </select>
-              <div
-                className="relative mb-2 rounded-md border border-red-600 px-2 py-1 text-[11px] text-red-600 font-medium 
-                  before:absolute 
-                  before:border-t-red-600 
-                  before:border-t-[9px]
-                  before:border-r-[8px] 
-                  before:border-r-transparent
-                  before:bottom-[-10px] 
-                  before:left-[9px] 
-                  
-                  after:absolute 
-                  after:border-t-white
-                  after:border-t-[9px]
-                  after:border-r-[7px] 
-                  after:border-r-transparent
-                  after:bottom-[-8px] 
-                  after:left-[10px]
-                  "
-              >
-                最短が選択されています
-              </div>
             </div>
-            <div className="flex items-center gap-2 relative">
+
+            <p className="text-xs text-gray-500 mt-3 mb-4">
+              ※当日18~21時の集荷は13時まで、翌日午前中の集荷は21時まで可能です
+            </p>
+          </div>
+
+          <div className="border border-[#fff3d0] bg-[#fffaea] p-3 flex flex-wrap items-center justify-between">
+            <div>お届け時間</div>
+            <div className="rounded bg-orange-500 text-white p-1 text-xs">
+              必須
+            </div>
+          </div>
+
+          <div className="col-span-2 ml-3 my-2">
+            <div className="grid grid-cols-[20px_auto] items-center gap-2">
               <div className="border border-[#53b300] bg-[#53b300] rounded-[50%] w-5 h-5 text-white flex items-center justify-center text-xs">
                 ✓
               </div>
@@ -147,7 +137,7 @@ export default function Step1({ setStep }: Step1Props) {
                 name="day"
                 id="day"
                 required
-                className="rounded border border-[#53b300] px-3 py-2 bg-[#eff7e8] w-1/2 shadow-[0_0_3px_#53b300] outline-none"
+                className="rounded border border-[#53b300] px-3 py-2 bg-[#eff7e8] w-full shadow-[0_0_3px_#53b300] outline-none"
               >
                 <option value="">選択してください</option>
                 {optionsTime.map((option) => (
@@ -160,27 +150,67 @@ export default function Step1({ setStep }: Step1Props) {
                   </option>
                 ))}
               </select>
-              <div
-                className="relative mb-2 rounded-md border border-red-600 px-2 py-1 text-[11px] text-red-600 font-medium 
-                  before:absolute 
-                  before:border-t-red-600 
-                  before:border-t-[9px]
-                  before:border-r-[8px] 
-                  before:border-r-transparent
-                  before:bottom-[-10px] 
-                  before:left-[9px] 
-                  after:absolute 
-                  after:border-t-white
-                  after:border-t-[9px]
-                  after:border-r-[7px] 
-                  after:border-r-transparent
-                  after:bottom-[-8px] 
-                  after:left-[10px]
-                  "
-              >
-                最短が選択されています
-              </div>
             </div>
+
+            {/* <ErrorMessage mes="最短が選択されています" /> */}
+          </div>
+
+          <div className="border border-[#fff3d0] bg-[#fffaea] p-3 flex flex-wrap items-center justify-between">
+            <div>梱包用のダンボール</div>
+            <div className="rounded bg-orange-500 text-white p-1 text-xs">
+              必須
+            </div>
+          </div>
+
+          <div className="col-span-2 ml-3 my-2">
+            <div className="grid grid-cols-2 gap-4">
+              <label>
+                <input
+                  type="radio"
+                  value="true"
+                  className="peer/cardboardPackagingTrue hidden"
+                  name="cardboardPackaging"
+                />
+
+                <div className="flex items-center justify-between px-3 py-1.5 border-2 rounded-lg cursor-pointer border-gray-200 group transition-all duration-150 peer-checked/cardboardPackagingTrue:border-blue-500 hover:bg-gray-50 ">
+                  <p className="font-medium text-xl text-gray-700 group-[.peer\/cardboardPackagingTrue:checked+&]:text-blue-700">
+                    必要
+                  </p>
+                  <Check
+                    strokeWidth={1.5}
+                    classNameI="w-9 h-9 text-blue-600 hidden group-[.peer\/cardboardPackagingTrue:checked+&]:block"
+                  />
+                  <Circle
+                    strokeWidth={1.5}
+                    classNameI="w-9 h-9 text-gray-600 block group-[.peer\/cardboardPackagingTrue:checked+&]:hidden"
+                  />
+                </div>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  value="false"
+                  className="peer/cardboardPackagingFalse hidden"
+                  name="cardboardPackaging"
+                />
+                <div className="flex items-center justify-between px-3 py-1.5 border-2 rounded-lg cursor-pointer border-gray-200 group transition-all duration-150 peer-checked/cardboardPackagingFalse:border-blue-500 hover:bg-gray-50 ">
+                  <p className="font-medium text-xl text-gray-700 group-[.peer\/cardboardPackagingFalse:checked+&]:text-blue-700">
+                    不要
+                  </p>
+                  <Check
+                    strokeWidth={1.5}
+                    classNameI="w-9 h-9 text-blue-600 invisible group-[.peer\/cardboardPackagingFalse:checked+&]:visible"
+                  />
+                  <Circle
+                    strokeWidth={1.5}
+                    classNameI="w-9 h-9 text-gray-600 block group-[.peer\/cardboardPackagingFalse:checked+&]:hidden"
+                  />
+                </div>
+              </label>
+            </div>
+            <p className="text-xs text-gray-500 mt-3 mb-1">
+              ※「必要」にチェックされた場合は集荷時にドライバーがお持ちします
+            </p>
           </div>
         </div>
       </div>
@@ -238,6 +268,6 @@ export default function Step1({ setStep }: Step1Props) {
           </table>
         </div>
       </div>
-    </div>
+    </>
   );
 }
