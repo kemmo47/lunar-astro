@@ -5,7 +5,7 @@ type Step3Props = {
 export default function Step3({ setStep }: Step3Props) {
   return (
     <>
-      <div className="mt-6">
+      <div className="mt-9">
         <div className="bg-[#655f5a] px-3 py-1 text-white">お届け日時</div>
         <div className="grid grid-cols-3 gap-0.5">
           <div className="col-span-1 bg-[#fffaea] border border-[#ffe8a6] px-5 py-3">
