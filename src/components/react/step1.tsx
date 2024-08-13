@@ -116,7 +116,7 @@ export default function Step1({ setStep }: Step1Props) {
               </select>
             </div>
 
-            <p className="text-xs text-gray-500 mt-3 mb-4">
+            <p className="text-xs text-gray-500 mt-3 mb-2">
               ※当日18~21時の集荷は13時まで、翌日午前中の集荷は21時まで可能です
             </p>
           </div>
@@ -172,13 +172,13 @@ export default function Step1({ setStep }: Step1Props) {
                   name="cardboardPackaging"
                 />
 
-                <div className="flex items-center justify-between px-3 py-1.5 border-2 rounded-lg cursor-pointer border-gray-200 group transition-all duration-150 peer-checked/cardboardPackagingTrue:border-blue-500 hover:bg-gray-50 ">
-                  <p className="font-medium text-xl text-gray-700 group-[.peer\/cardboardPackagingTrue:checked+&]:text-blue-700">
+                <div className="flex items-center justify-between px-3 py-1.5 border-2 rounded-lg cursor-pointer border-gray-200 group transition-all duration-150 peer-checked/cardboardPackagingTrue:border-[#53b300] hover:bg-gray-50 ">
+                  <p className="font-medium text-xl text-gray-700 group-[.peer\/cardboardPackagingTrue:checked+&]:text-[#53b300]">
                     必要
                   </p>
                   <Check
                     strokeWidth={1.5}
-                    classNameI="w-9 h-9 text-blue-600 hidden group-[.peer\/cardboardPackagingTrue:checked+&]:block"
+                    classNameI="w-9 h-9 text-[#53b300] hidden group-[.peer\/cardboardPackagingTrue:checked+&]:block"
                   />
                   <Circle
                     strokeWidth={1.5}
@@ -193,13 +193,13 @@ export default function Step1({ setStep }: Step1Props) {
                   className="peer/cardboardPackagingFalse hidden"
                   name="cardboardPackaging"
                 />
-                <div className="flex items-center justify-between px-3 py-1.5 border-2 rounded-lg cursor-pointer border-gray-200 group transition-all duration-150 peer-checked/cardboardPackagingFalse:border-blue-500 hover:bg-gray-50 ">
-                  <p className="font-medium text-xl text-gray-700 group-[.peer\/cardboardPackagingFalse:checked+&]:text-blue-700">
+                <div className="flex items-center justify-between px-3 py-1.5 border-2 rounded-lg cursor-pointer border-gray-200 group transition-all duration-150 peer-checked/cardboardPackagingFalse:border-[#53b300] hover:bg-gray-50 ">
+                  <p className="font-medium text-xl text-gray-700 group-[.peer\/cardboardPackagingFalse:checked+&]:text-[#53b300]">
                     不要
                   </p>
                   <Check
                     strokeWidth={1.5}
-                    classNameI="w-9 h-9 text-blue-600 invisible group-[.peer\/cardboardPackagingFalse:checked+&]:visible"
+                    classNameI="w-9 h-9 text-[#53b300] invisible group-[.peer\/cardboardPackagingFalse:checked+&]:visible"
                   />
                   <Circle
                     strokeWidth={1.5}
@@ -208,14 +208,14 @@ export default function Step1({ setStep }: Step1Props) {
                 </div>
               </label>
             </div>
-            <p className="text-xs text-gray-500 mt-3 mb-1">
+            <p className="text-xs text-gray-500 mt-3">
               ※「必要」にチェックされた場合は集荷時にドライバーがお持ちします
             </p>
           </div>
         </div>
       </div>
 
-      <div className="mt-9">
+      <div className="my-12">
         <div className="flex flex-col justify-center items-center">
           <button
             onClick={() => setStep("step2")}
@@ -234,7 +234,7 @@ export default function Step1({ setStep }: Step1Props) {
         </p>
       </div>
 
-      <div className="mt-5 mb-[50px]">
+      <div className="mb-[50px]">
         <span className="font-light text-xs">事前査定明細</span>
         <div className="relative overflow-x-auto mt-1">
           <table className="w-full text-sm text-left rtl:text-center text-gray-500">
