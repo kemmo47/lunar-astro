@@ -1,3 +1,6 @@
+import ButtonSubmitStep from "./components/ButtonSubmitStep";
+import { Check } from "./icon/Check";
+
 type Step2Props = {
   setStep: (step: string) => void;
 };
@@ -57,104 +60,122 @@ export default function Step2({ setStep }: Step2Props) {
     console.log("zipToAddress: ", data);
   };
 
+  const handleSubmit = () => {
+    setStep("step3");
+  };
+
   return (
     <div className="mt-9">
-      <div className="bg-[#655f5a] px-3.5 py-1.5 text-white">お客様情報</div>
-      <div className="grid grid-cols-5 gap-0.5">
-        <div className="col-span-2 bg-[#fffaea] border border-[#ffe8a6] px-5 py-2 flex items-center justify-between">
+      <div className="bg-[#655f5a] px-3.5 py-1.5 text-white text-xl">
+        お客様情報
+      </div>
+      <div className="grid grid-cols-[340px_auto] gap-0.5">
+        <div className="bg-[#fffaea] border border-[#fff3d0] px-5 py-2 flex items-center justify-between">
           <span>お名前（漢字）</span>
           <div className="rounded-md bg-[#ff6c00] p-1.5 text-white text-xs">
             必須
           </div>
         </div>
-        <div className="col-span-3 border border-gray-200 px-5 py-2 grid grid-cols-[auto_20px] items-center gap-2">
+        <div className="pl-1 py-2 grid grid-cols-[24px_auto] items-center gap-1">
+          <Check
+            classNameSvg="w-6 h-6 text-[#53b300]"
+            strokeWidth={0}
+            solid={true}
+          />
           <input
             type="text"
-            className="w-full bg-[#eff7e8] border border-[#53b300] shadow-[0_0_3px_#53b300] outline-none px-3 py-2 rounded"
+            className="w-[300px] bg-[#eff7e8] border border-[#53b300] shadow-[0_0_3px_#53b300] outline-none px-3 py-2 rounded"
             value="SDテスト"
             placeholder="例）買取 太郎"
             required
           />
-          <div className="border border-[#53b300] bg-[#53b300] rounded-[50%] w-5 h-5 text-white flex items-center justify-center text-xs">
-            ✓
-          </div>
         </div>
 
-        <div className="col-span-2 bg-[#fffaea] border border-[#ffe8a6] px-5 py-2 flex items-center justify-between">
+        <div className="bg-[#fffaea] border border-[#fff3d0] px-5 py-2 flex items-center justify-between">
           <span>お名前（カナ）</span>
           <div className="rounded-md bg-[#ff6c00] p-1.5 text-white text-xs">
             必須
           </div>
         </div>
-        <div className="col-span-3 border border-gray-200 px-5 py-2 grid grid-cols-[auto_20px] items-center gap-2">
+        <div className="pl-1 py-2 grid grid-cols-[24px_auto] items-center gap-1">
+          <Check
+            classNameSvg="w-6 h-6 text-[#53b300]"
+            strokeWidth={0}
+            solid={true}
+          />
           <input
             type="text"
-            className="w-full bg-[#eff7e8] border border-[#53b300] shadow-[0_0_3px_#53b300] outline-none px-3 py-2 rounded"
+            className="w-[300px] bg-[#eff7e8] border border-[#53b300] shadow-[0_0_3px_#53b300] outline-none px-3 py-2 rounded"
             value="SDテスト"
             placeholder="例）カイトリ タロウ"
             required
           />
-          <div className="border border-[#53b300] bg-[#53b300] rounded-[50%] w-5 h-5 text-white flex items-center justify-center text-xs">
-            ✓
-          </div>
         </div>
 
-        <div className="col-span-2 bg-[#fffaea] border border-[#ffe8a6] px-5 py-2 flex items-center justify-between">
+        <div className="bg-[#fffaea] border border-[#fff3d0] px-5 py-2 flex items-center justify-between">
           <span>電話番号</span>
           <div className="rounded-md bg-[#ff6c00] p-1.5 text-white text-xs">
             必須
           </div>
         </div>
-        <div className="col-span-3 border border-gray-200 px-5 py-2 grid grid-cols-[auto_20px] items-center gap-2">
+        <div className="pl-1 py-2 grid grid-cols-[24px_auto] items-center gap-1">
+          <Check
+            classNameSvg="w-6 h-6 text-[#53b300]"
+            strokeWidth={0}
+            solid={true}
+          />
           <input
             type="text"
-            className="w-full bg-[#eff7e8] border border-[#53b300] shadow-[0_0_3px_#53b300] outline-none px-3 py-2 rounded"
+            className="w-[300px] bg-[#eff7e8] border border-[#53b300] shadow-[0_0_3px_#53b300] outline-none px-3 py-2 rounded"
             value="000000000000"
             placeholder="0123456789"
             required
           />
-          <div className="border border-[#53b300] bg-[#53b300] rounded-[50%] w-5 h-5 text-white flex items-center justify-center text-xs">
-            ✓
-          </div>
         </div>
 
-        <div className="col-span-2 bg-[#fffaea] border border-[#ffe8a6] px-5 py-2 flex items-center justify-between">
+        <div className="bg-[#fffaea] border border-[#fff3d0] px-5 py-2 flex items-center justify-between">
           <span>郵便番号</span>
           <div className="rounded-md bg-[#ff6c00] p-1.5 text-white text-xs">
             必須
           </div>
         </div>
-        <div className="col-span-3 border border-gray-200 px-5 py-2 grid grid-cols-2 items-center gap-3">
+
+        <div className="pl-1 py-2 flex items-center gap-1">
+          <Check
+            classNameSvg="w-6 h-6 text-[#53b300]"
+            strokeWidth={0}
+            solid={true}
+          />
           <input
             type="text"
-            className="w-full bg-[#eff7e8] border border-[#53b300] shadow-[0_0_3px_#53b300] outline-none px-3 py-2 rounded"
+            className="w-[300px] bg-[#eff7e8] border border-[#53b300] shadow-[0_0_3px_#53b300] outline-none px-3 py-2 rounded"
             value="1040031"
             placeholder="例）1040031"
             required
           />
-          <div className="grid grid-cols-[auto_20px] items-center gap-3">
-            <button
-              onClick={() => zipToAddress({ focus: true })}
-              className="text-white text-xs text-center py-2 bg-[#f39800] rounded-3xl w-full shadow-[0_2px_0_1px_#c07801] transition-all duration-200 hover:shadow-none hover:translate-y-0.5"
-            >
-              住所を自動入力
-            </button>
-            <div className="border border-[#53b300] bg-[#53b300] rounded-[50%] w-5 h-5 text-white flex items-center justify-center text-xs">
-              ✓
-            </div>
-          </div>
+          <button
+            onClick={() => zipToAddress({ focus: true })}
+            className="text-white ml-2 text-base text-center py-[5px] px-5 bg-[#f39800] rounded-[22px] shadow-[0_2px_0_1px_#c07801] transition-all duration-200 hover:shadow-none hover:translate-y-0.5"
+          >
+            住所を自動入力
+          </button>
         </div>
 
-        <div className="col-span-2 bg-[#fffaea] border border-[#ffe8a6] px-5 py-2 flex items-center justify-between">
+        <div className="bg-[#fffaea] border border-[#fff3d0] px-5 py-2 flex items-center justify-between">
           <span>都道府県</span>
           <div className="rounded-md bg-[#ff6c00] p-1.5 text-white text-xs">
             必須
           </div>
         </div>
-        <div className="col-span-3 border border-gray-200 px-5 py-2 grid grid-cols-[auto_20px] items-center gap-2">
+        <div className="pl-1 py-2 grid grid-cols-[24px_auto] items-center gap-1">
+          <Check
+            classNameSvg="w-6 h-6 text-[#53b300]"
+            strokeWidth={0}
+            solid={true}
+          />
           <select
             required
-            className="rounded border border-[#53b300] px-3 py-2.5 bg-[#eff7e8] shadow-[0_0_3px_#53b300] outline-none"
+            className="rounded w-[300px] border border-[#53b300] px-3 py-2.5 bg-[#eff7e8] shadow-[0_0_3px_#53b300] outline-none"
           >
             <option value="">選択してください</option>
             {listCity.map((city) => (
@@ -163,60 +184,69 @@ export default function Step2({ setStep }: Step2Props) {
               </option>
             ))}
           </select>
-          <div className="border border-[#53b300] bg-[#53b300] rounded-[50%] w-5 h-5 text-white flex items-center justify-center text-xs">
-            ✓
-          </div>
         </div>
 
-        <div className="col-span-2 bg-[#fffaea] border border-[#ffe8a6] px-5 py-2 flex items-center justify-between">
+        <div className="bg-[#fffaea] border border-[#fff3d0] px-5 py-2 flex items-center justify-between">
           <span>住所（町名）</span>
           <div className="rounded-md bg-[#ff6c00] p-1.5 text-white text-xs">
             必須
           </div>
         </div>
-        <div className="col-span-3 border border-gray-200 px-5 py-2 grid grid-cols-[auto_20px] items-center gap-2">
+        <div className="pl-1 py-2 grid grid-cols-[24px_auto] items-center gap-1">
+          <Check
+            classNameSvg="w-6 h-6 text-[#53b300]"
+            strokeWidth={0}
+            solid={true}
+          />
           <input
             type="text"
-            className="w-full bg-[#eff7e8] border border-[#53b300] shadow-[0_0_3px_#53b300] outline-none px-3 py-2 rounded"
+            className="w-[300px] bg-[#eff7e8] border border-[#53b300] shadow-[0_0_3px_#53b300] outline-none px-3 py-2 rounded"
             value="中央区京橋"
             placeholder="例：中央区京橋"
             required
           />
-          <div className="border border-[#53b300] bg-[#53b300] rounded-[50%] w-5 h-5 text-white flex items-center justify-center text-xs">
-            ✓
-          </div>
         </div>
 
-        <div className="col-span-2 bg-[#fffaea] border border-[#ffe8a6] px-5 py-2 flex items-center justify-between">
+        <div className="bg-[#fffaea] border border-[#fff3d0] px-5 py-2 flex items-center justify-between">
           <span>住所（番地・建物名）</span>
           <div className="rounded-md bg-[#ff6c00] p-1.5 text-white text-xs">
             必須
           </div>
         </div>
-        <div className="col-span-3 border border-gray-200 px-5 py-2 grid grid-cols-[auto_20px] items-center gap-2">
+        <div className="pl-1 py-2 grid grid-cols-[24px_auto] items-center gap-1">
+          <Check
+            classNameSvg="w-6 h-6 text-[#53b300]"
+            strokeWidth={0}
+            solid={true}
+          />
           <input
             type="text"
-            className="w-full bg-[#eff7e8] border border-[#53b300] shadow-[0_0_3px_#53b300] outline-none px-3 py-2 rounded"
+            className="w-[300px] bg-[#eff7e8] border border-[#53b300] shadow-[0_0_3px_#53b300] outline-none px-3 py-2 rounded"
             value=""
             placeholder="例：1-1-1 東京建物ビル"
             required
           />
-          <div className="border border-[#53b300] bg-[#53b300] rounded-[50%] w-5 h-5 text-white flex items-center justify-center text-xs">
-            ✓
-          </div>
         </div>
       </div>
 
-      <div className="my-12">
-        <div className="flex flex-col justify-center items-center">
-          <button
-            onClick={() => setStep("step3")}
-            className="font-bold tracking-wide h-20 leading-tight border border-[#3e6336] rounded-md shadow-[0_4px_0_0_#3e6336] transition-all duration-300 relative w-[444px] text-[25px] bg-[#5a8c4e] text-white hover:shadow-[0_0_0_0] hover:translate-y-2"
-          >
-            <span>この内容で申し込む</span>
-            <div className="before:absolute before:w-5 before:h-5 before:bg-white before:rounded-full before:right-3 before:top-1/2 before:-translate-y-1/2 after:absolute after:w-3 after:h-3 after:border-t-[7px] after:border-b-[7px] after:border-l-[7px] after:border-t-transparent after:border-l-[#5a8c4e] after:border-b-transparent after:right-3 after:top-1/2 after:-translate-y-1/2"></div>
-          </button>
-        </div>
+      <div className="mt-[33px]">
+        <ButtonSubmitStep
+          title="この内容で申し込む"
+          handleSubmit={handleSubmit}
+          note={
+            <div className="flex items-center justify-center gap-4">
+              <img
+                className="w-[34px]"
+                src="/assets/address_attention.png"
+                alt="address attention"
+              />
+              <ul className="text-[13px] leading-5 list-none">
+                <li>古物営業法上、本人確認書類に記載の住所に限ります</li>
+                <li>建物名、部屋番号がある場合は必ずご記入ください</li>
+              </ul>
+            </div>
+          }
+        />
       </div>
     </div>
   );

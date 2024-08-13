@@ -3,4 +3,5 @@ export type Icon = {
   classNameSvg?: string;
   classNameI?: string;
   fillColor?: string;
+  solid?: boolean;
 };
