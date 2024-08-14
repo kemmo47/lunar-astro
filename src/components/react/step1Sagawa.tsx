@@ -1,8 +1,8 @@
 import { dataDelivery, tsToDeliveryDateLabel } from "../../common/data";
 import FormItem from "./components/FormItem";
-import FormItemRadio from "./components/FormItemRadio";
 import Products from "./components/Products";
 import ButtonSubmitStep from "./components/ButtonSubmitStep";
+import TotalAssessedValue from "./components/TotalAssessedValue";
 
 type Step1SagawaProps = {
   setStep: (step: string) => void;
@@ -35,17 +35,17 @@ export default function Step1Sagawa({ setStep }: Step1SagawaProps) {
 
   return (
     <div className="max-w-[800px] mx-auto">
-      <div className="border-b border-b-[#df4726] flex items-center gap-7 px-[13px] pb-2.5 mb-2.5">
-        <div className="bg-[#df4726] text-white text-[15px] px-[10px] py-[3px] font-normal">
-          査定額合計
-        </div>
-        <div className="text-[#df4726] leading-none">
-          <span className="text-[45px] font-bold">40</span>
-          <span className="text-[30px] relative -top-2 font-normal"> ～ </span>
-          <span className="text-[60px] font-bold">60</span>
-          <span className="text-[23px] font-bold">円</span>
-        </div>
-      </div>
+      <TotalAssessedValue
+        assessed_price={dataDelivery.item.buy_items.reduce(
+          (total, item) => {
+            return [
+              total[0] + item.assessed_price[0],
+              total[1] + item.assessed_price[1],
+            ];
+          },
+          [0, 0]
+        )}
+      />
 
       <div className="pl-[13px] mb-5 text-[#333]">
         <span className="font-bold text-[17px]">
