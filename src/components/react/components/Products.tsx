@@ -40,17 +40,17 @@ export default function Products({ products }: ProductsProps) {
           </thead>
           <tbody>
             {products.map((product, key) => (
-              <tr key={key} className="bg-white even:bg-[#f4f4f4]">
+              <tr key={key} className="bg-white even:bg-[#f4f4f4] text-base">
                 <th
                   scope="row"
-                  className="px-6 py-2 border font-medium text-[#333] text-start"
+                  className="px-2.5 py-1.5 leading-[23px] border font-medium text-[#333] text-start"
                 >
                   {product.title}
                 </th>
-                <td className="px-6 border py-2 text-end max-w-20">
+                <td className="border px-2.5 py-1.5 leading-[23px] text-end max-w-20">
                   {product.amount}
                 </td>
-                <td className="px-6 border py-2 text-end">
+                <td className="border px-2.5 py-1.5 leading-[23px] text-end">
                   {product.assessed_price[0]}〜{product.assessed_price[1]}
                 </td>
               </tr>
