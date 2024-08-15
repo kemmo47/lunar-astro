@@ -15,7 +15,7 @@ export default function LayoutFormYamato() {
         {step === "step1" ? <Step1Yamato setStep={setStep} /> : ""}
         {step === "step2" ? <Step2 setStep={setStep} /> : ""}
         {step === "step3" ? <Step3 setStep={setStep} /> : ""}
-        {step === "step4" ? <Step4 /> : ""}
+        {step === "step4" ? <Step4 type="yamato" /> : ""}
       </div>
     </div>
   );
