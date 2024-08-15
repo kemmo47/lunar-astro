@@ -14,7 +14,7 @@ export default function ButtonSubmitStep({
       <div className="flex flex-col justify-center items-center mb-3.5">
         <button
           onClick={handleSubmit}
-          className="font-bold tracking-wide h-20 leading-tight border border-[#3e6336] rounded-md shadow-[0_4px_0_0_#3e6336] transition-all duration-300 relative w-[444px] text-[25px] bg-[#5a8c4e] text-white hover:shadow-[0_0_0_0] hover:translate-y-2"
+          className="font-bold tracking-wide h-20 leading-tight border border-[#3e6336] rounded-md shadow-[0_4px_0_0_#3e6336] transition-all duration-300 relative w-[444px] text-[25px] bg-[#5a8c4e] text-white hover:shadow-[0_0_0_0] hover:translate-y-1"
         >
           <span>{title}</span>
           <div

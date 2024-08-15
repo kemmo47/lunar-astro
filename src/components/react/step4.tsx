@@ -1,4 +1,8 @@
-export default function Step4() {
+type Step4Props = {
+  type: string;
+};
+
+export default function Step4({ type }: Step4Props) {
   return (
     <div className="mt-8">
       <h3 className="bg-[#655f5a] px-[15px] py-1.5 text-white text-xl">
@@ -24,11 +28,24 @@ export default function Step4() {
           </p>
           <div className="p-[15px_15px_15px_20px] flex gap-6">
             <div className="flex-1 flex flex-col items-center relative after:absolute after:top-1/3 after:-right-3 after:-translate-y-1/2 after:border-t-[8px] after:border-b-[8px] after:border-l-[10px] after:border-t-transparent after:border-b-transparent after:border-l-[#fe9901]">
-              <img className="mb-5" src="/assets/logo_sagawa.png" alt="logo" />
+              <img
+                className="mb-5"
+                width={160}
+                height={78}
+                src={`/assets/logo_${type}.png`}
+                alt="logo"
+              />
               <p className="font-semibold mb-3 text-base">梱包キットのお届け</p>
               <p className="text-gray-600 text-sm">
-                ご指定の日時に佐川急便のドライバーが梱包キットをお届けします。
-                商品を梱包し、伝票に記載の集荷用電話番号へお電話ください。
+                {type == "sagawa" ? (
+                  <>
+                    ご指定の日時に佐川急便のドライバーが梱包キットをお届けします。商品を梱包し、伝票に記載の集荷用電話番号へお電話ください。
+                  </>
+                ) : (
+                  <>
+                    ご指定の日時にヤマト便のドライバーが梱包キットをお届けいたします。商品を梱包し、配送伝票に記載の集荷番号にお電話ください。
+                  </>
+                )}
               </p>
             </div>
             <div className="flex-1 flex flex-col items-center relative after:absolute after:top-1/3 after:-right-3 after:-translate-y-1/2 after:border-t-[8px] after:border-b-[8px] after:border-l-[10px] after:border-t-transparent after:border-b-transparent after:border-l-[#fe9901]">
